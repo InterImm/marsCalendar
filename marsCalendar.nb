@@ -1,0 +1,154 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 10.0' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       158,          7]
+NotebookDataLength[      4156,        145]
+NotebookOptionsPosition[      3299,        109]
+NotebookOutlinePosition[      3652,        125]
+CellTagsIndexPosition[      3609,        122]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+
+Cell[CellGroupData[{
+Cell["Mars Calendar", "Section",
+ CellChangeTimes->{{3.6212632304980583`*^9, 3.621263234940715*^9}}],
+
+Cell["\<\
+This is a note about the calendar on mars which has the following \
+characteristics.\
+\>", "Text",
+ CellChangeTimes->{{3.621263250899152*^9, 3.62126327985645*^9}}],
+
+Cell["Starts from April 28, 1970", "Item",
+ CellChangeTimes->{{3.6212632957341146`*^9, 3.621263310137183*^9}, {
+  3.621263361052161*^9, 3.621263371205555*^9}}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["Prep", "Section",
+ CellChangeTimes->{{3.621263984247841*^9, 3.621263984875139*^9}}],
+
+Cell[BoxData[
+ RowBox[{"Needs", "[", "\"\<Calendar`\>\"", "]"}]], "Input",
+ CellChangeTimes->{{3.621263980022591*^9, 3.621263980024045*^9}, {
+  3.621264016486068*^9, 3.6212640485755243`*^9}}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["Explanation", "Section",
+ CellChangeTimes->{{3.621272840191605*^9, 3.6212728431029243`*^9}}],
+
+Cell["\<\
+The idea is to coordinate the dates at 6th January 2000 on the Earth\
+\>", "Text",
+ CellChangeTimes->{{3.621272860010062*^9, 3.621272890034837*^9}}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["Coversion", "Section",
+ CellChangeTimes->{{3.6212634096442833`*^9, 3.621263440532436*^9}}],
+
+Cell[TextData[{
+ StyleBox["In ",
+  FontColor->GrayLevel[0.5]],
+ StyleBox["Mathematica",
+  FontSlant->"Italic",
+  FontColor->GrayLevel[0.5]],
+ StyleBox[", day difference can be easily calculated using DateDifference[]. \
+However, we are just exploring an algrimth for our python or js program. The \
+idea is to calculate Julian date.",
+  FontColor->GrayLevel[0.5]]
+}], "Text",
+ CellChangeTimes->{{3.621263583964006*^9, 3.621263644126238*^9}, {
+  3.621263735341617*^9, 3.621263741464388*^9}}],
+
+Cell["\<\
+The idea of the algrimth is to calculate the Julian dates and Mars sol dates. \
+One of the key date is 6th January 2000 on the Earth when it was midnight at \
+the Martian prime meridian.\
+\>", "Text",
+ CellChangeTimes->{{3.62126490925305*^9, 3.621264998167469*^9}, {
+  3.621272892015368*^9, 3.6212728930514107`*^9}}],
+
+Cell["\<\
+The Julian date of 1 January 1970 00:00:00 UTC is 2,440,587.5. Julian date of \
+the starting point\
+\>", "Text",
+ CellChangeTimes->{{3.621263446698999*^9, 3.621263453966382*^9}, {
+  3.621264566874982*^9, 3.621264606151516*^9}}],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"2", ",", "440", ",", 
+  RowBox[{"587.5", "+"}]}]], "Input",
+ CellChangeTimes->{{3.621263829567684*^9, 3.621263846146707*^9}, {
+  3.6212645625612907`*^9, 3.621264563759756*^9}, {3.621273133526867*^9, 
+  3.621273137183607*^9}}],
+
+Cell[BoxData[
+ RowBox[{"ToJulian", "[", 
+  RowBox[{"{", 
+   RowBox[{"4", ",", "28", ",", "1970"}], "}"}], "]"}]], "Output",
+ CellChangeTimes->{3.621263849371922*^9}]
+}, Open  ]]
+}, Open  ]]
+},
+WindowSize->{1280, 756},
+WindowMargins->{{0, Automatic}, {Automatic, 0}},
+FrontEndVersion->"10.0 for Mac OS X x86 (32-bit, 64-bit Kernel) (June 27, \
+2014)",
+StyleDefinitions->"Default.nb"
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[CellGroupData[{
+Cell[580, 22, 100, 1, 64, "Section"],
+Cell[683, 25, 173, 4, 30, "Text"],
+Cell[859, 31, 159, 2, 28, "Item"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[1055, 38, 89, 1, 64, "Section"],
+Cell[1147, 41, 191, 3, 28, "Input"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[1375, 49, 98, 1, 64, "Section"],
+Cell[1476, 52, 158, 3, 30, "Text"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[1671, 60, 96, 1, 64, "Section"],
+Cell[1770, 63, 490, 12, 30, "Text"],
+Cell[2263, 77, 326, 6, 30, "Text"],
+Cell[2592, 85, 237, 5, 30, "Text"],
+Cell[CellGroupData[{
+Cell[2854, 94, 249, 5, 28, "Input"],
+Cell[3106, 101, 165, 4, 28, "Output"]
+}, Open  ]]
+}, Open  ]]
+}
+]
+*)
+
+(* End of internal cache information *)
