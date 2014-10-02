@@ -10,10 +10,10 @@
 NotebookFileLineBreakTest
 NotebookFileLineBreakTest
 NotebookDataPosition[       158,          7]
-NotebookDataLength[      4156,        145]
-NotebookOptionsPosition[      3299,        109]
-NotebookOutlinePosition[      3652,        125]
-CellTagsIndexPosition[      3609,        122]
+NotebookDataLength[     16266,        503]
+NotebookOptionsPosition[     13927,        421]
+NotebookOutlinePosition[     14281,        437]
+CellTagsIndexPosition[     14238,        434]
 WindowFrame->Normal*)
 
 (* Beginning of Notebook Content *)
@@ -42,7 +42,12 @@ Cell["Prep", "Section",
 Cell[BoxData[
  RowBox[{"Needs", "[", "\"\<Calendar`\>\"", "]"}]], "Input",
  CellChangeTimes->{{3.621263980022591*^9, 3.621263980024045*^9}, {
-  3.621264016486068*^9, 3.6212640485755243`*^9}}]
+  3.621264016486068*^9, 3.6212640485755243`*^9}}],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"m2e", "=", "1.027491252"}], ";"}]], "Input",
+ CellChangeTimes->{{3.621278518604313*^9, 3.621278521874853*^9}}]
 }, Open  ]],
 
 Cell[CellGroupData[{
@@ -83,32 +88,339 @@ the Martian prime meridian.\
  CellChangeTimes->{{3.62126490925305*^9, 3.621264998167469*^9}, {
   3.621272892015368*^9, 3.6212728930514107`*^9}}],
 
+Cell[CellGroupData[{
+
+Cell["Dates away from coordinate date", "Subsection",
+ CellChangeTimes->{{3.6212765752102957`*^9, 3.621276591234744*^9}}],
+
 Cell["\<\
-The Julian date of 1 January 1970 00:00:00 UTC is 2,440,587.5. Julian date of \
-the starting point\
+The Seconds away from the coordinate date 6th January 2000 on the Earth is\
 \>", "Text",
  CellChangeTimes->{{3.621263446698999*^9, 3.621263453966382*^9}, {
-  3.621264566874982*^9, 3.621264606151516*^9}}],
+  3.621264566874982*^9, 3.621264606151516*^9}, {3.621276019047955*^9, 
+  3.6212760550451508`*^9}, {3.621276204085737*^9, 3.621276207161622*^9}, {
+  3.621276355946597*^9, 3.6212763586100817`*^9}}],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"dSec", "[", "date_", "]"}], ":=", 
+  RowBox[{
+   RowBox[{"AbsoluteTime", "[", "date", "]"}], "-", 
+   RowBox[{"AbsoluteTime", "[", 
+    RowBox[{"{", 
+     RowBox[{"2000", ",", "1", ",", "6", ",", "0", ",", "0", ",", "0"}], 
+     "}"}], "]"}]}]}]], "Input",
+ CellChangeTimes->{{3.621263829567684*^9, 3.621263846146707*^9}, {
+   3.6212645625612907`*^9, 3.621264563759756*^9}, {3.621273133526867*^9, 
+   3.621273137183607*^9}, 3.621276058372521*^9, {3.621276163047784*^9, 
+   3.621276180095173*^9}, {3.621276220629107*^9, 3.6212762605529127`*^9}}],
+
+Cell["Input date should have the format {y,m,d,h,m,s}", "Text",
+ CellChangeTimes->{{3.6212762095799837`*^9, 3.621276215044651*^9}}],
 
 Cell[CellGroupData[{
 
 Cell[BoxData[
- RowBox[{"2", ",", "440", ",", 
-  RowBox[{"587.5", "+"}]}]], "Input",
- CellChangeTimes->{{3.621263829567684*^9, 3.621263846146707*^9}, {
-  3.6212645625612907`*^9, 3.621264563759756*^9}, {3.621273133526867*^9, 
-  3.621273137183607*^9}}],
+ RowBox[{"dSec", "[", 
+  RowBox[{"{", 
+   RowBox[{"2000", ",", "1", ",", "2", ",", "0", ",", "0", ",", "4"}], "}"}], 
+  "]"}]], "Input",
+ CellChangeTimes->{{3.6212762644722357`*^9, 3.621276283966488*^9}}],
 
 Cell[BoxData[
- RowBox[{"ToJulian", "[", 
-  RowBox[{"{", 
-   RowBox[{"4", ",", "28", ",", "1970"}], "}"}], "]"}]], "Output",
- CellChangeTimes->{3.621263849371922*^9}]
+ RowBox[{"-", "345596"}]], "Output",
+ CellChangeTimes->{{3.6212762763764677`*^9, 3.621276284394977*^9}}]
+}, Open  ]],
+
+Cell["Number of dates on the earth away from the coordinate date", "Text",
+ CellChangeTimes->{{3.621276314854594*^9, 3.621276352674644*^9}}],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"edDay", "[", "date_", "]"}], ":=", 
+  RowBox[{
+   RowBox[{"dSec", "[", "date", "]"}], "/", "86400.0"}]}]], "Input",
+ CellChangeTimes->{{3.621276385331787*^9, 3.621276417686297*^9}}],
+
+Cell["Number of dates on Mars away from the coordinate date", "Text",
+ CellChangeTimes->{{3.62127642679082*^9, 3.621276440418456*^9}}],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"mdDay", "[", "date_", "]"}], ":=", 
+  RowBox[{
+   RowBox[{"edDay", "[", "date", "]"}], "/", "m2e"}]}]], "Input",
+ CellChangeTimes->{{3.6212765221559153`*^9, 3.621276550763998*^9}, {
+  3.621278506863482*^9, 3.621278508193843*^9}}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["Trace the calendar date on Mars", "Subsection",
+ CellChangeTimes->{{3.621276601387986*^9, 3.621276622954135*^9}}],
+
+Cell["\<\
+Mars use Darian calendar. The only thing we need to take care of is the leap \
+year since leap year has 669 sol days while a common year has only 668 sol \
+days on Mars.\
+\>", "Text",
+ CellChangeTimes->{{3.6212766318003607`*^9, 3.621276756695334*^9}}],
+
+Cell["\<\
+Thus I would prefer to write a function that tells wether the year is a leap \
+year or not in python. 
+
+def is_leap_year(year):
+    if year % 3000 == 0:
+        return False
+    elif year % 1000 == 0:
+        return True
+    elif year % 100 == 0:
+        return False
+    elif (year % 2 == 0) and (year % 10 == 0):
+        return True
+    else:
+        return False
+  
+        
+But here is a easier algrimth.\
+\>", "Text",
+ CellChangeTimes->{{3.621276768253025*^9, 3.62127680597325*^9}, {
+  3.621277201332386*^9, 3.6212772185408173`*^9}, {3.621277353170886*^9, 
+  3.6212773799451847`*^9}}],
+
+Cell["\<\
+Define a step function which has a value of 1 for leap year but 0 for common \
+year.\
+\>", "Text",
+ CellChangeTimes->{{3.6212772217921877`*^9, 3.621277247459029*^9}, {
+   3.621277346340335*^9, 3.6212773467457323`*^9}, 3.621278081669065*^9}],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"leapPlus", "[", "year_", "]"}], ":=", 
+  RowBox[{"If", "[", 
+   RowBox[{
+    RowBox[{
+     RowBox[{
+      RowBox[{"Mod", "[", 
+       RowBox[{"year", ",", "3000"}], "]"}], "\[Equal]", "0"}], "||", 
+     RowBox[{
+      RowBox[{
+       RowBox[{"Mod", "[", 
+        RowBox[{"year", ",", "3000"}], "]"}], "!=", "0"}], "&&", 
+      RowBox[{
+       RowBox[{"Mod", "[", 
+        RowBox[{"year", ",", "1000"}], "]"}], "\[NotEqual]", "0"}], "&&", 
+      RowBox[{
+       RowBox[{"Mod", "[", 
+        RowBox[{"year", ",", "100"}], "]"}], "==", "0"}]}], "||", 
+     RowBox[{
+      RowBox[{
+       RowBox[{"Mod", "[", 
+        RowBox[{"year", ",", "3000"}], "]"}], "!=", "0"}], "&&", 
+      RowBox[{
+       RowBox[{"Mod", "[", 
+        RowBox[{"year", ",", "1000"}], "]"}], "\[NotEqual]", "0"}], "&&", 
+      RowBox[{
+       RowBox[{"Mod", "[", 
+        RowBox[{"year", ",", "100"}], "]"}], "\[NotEqual]", "0"}], "&&", 
+      RowBox[{"Not", "[", 
+       RowBox[{
+        RowBox[{
+         RowBox[{"Mod", "[", 
+          RowBox[{"year", ",", "2"}], "]"}], "==", "0"}], "&&", 
+        RowBox[{
+         RowBox[{"Mod", "[", 
+          RowBox[{"year", ",", "10"}], "]"}], "==", "0"}]}], "]"}]}]}], ",", 
+    "0", ",", "1"}], "]"}]}]], "Input",
+ CellChangeTimes->{{3.621277250427969*^9, 3.6212772730110083`*^9}, {
+  3.621277387601139*^9, 3.621277475500033*^9}, {3.6212775139341383`*^9, 
+  3.621277665963738*^9}, {3.6212778153024607`*^9, 3.621277826243498*^9}, {
+  3.6212779498145437`*^9, 3.621277953990191*^9}, {3.62127801351364*^9, 
+  3.6212780374001827`*^9}}],
+
+Cell["## Test this:", "Text",
+ CellChangeTimes->{{3.621278068964666*^9, 3.6212780751321907`*^9}}],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"leapPlus", "[", "3000", "]"}]], "Input",
+ CellChangeTimes->{{3.621277863789742*^9, 3.62127786739487*^9}, {
+  3.621277968133787*^9, 3.621277968314279*^9}, {3.621278042714602*^9, 
+  3.621278061238241*^9}}],
+
+Cell[BoxData["0"], "Output",
+ CellChangeTimes->{
+  3.6212778682388477`*^9, {3.621277960721159*^9, 3.62127796899235*^9}, {
+   3.621278018097365*^9, 3.621278062008757*^9}}]
+}, Open  ]],
+
+Cell["\<\
+Next big deal is to know the coordinate date of Mars calendar in \
+correspondence with Earth calendar.
+Number of earth dates starting from 1970-04-28 to 2000-01-06\
+\>", "Text",
+ CellChangeTimes->{{3.6212782269748*^9, 3.62127835378897*^9}}],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"DateDifference", "[", 
+  RowBox[{
+   RowBox[{"{", 
+    RowBox[{"1970", ",", "4", ",", "28"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"2000", ",", "1", ",", "6"}], "}"}]}], "]"}]], "Input",
+ CellChangeTimes->{{3.621278378386519*^9, 3.621278444874758*^9}}],
+
+Cell[BoxData[
+ TemplateBox[{"10845"},
+  "QuantityUnit",
+  DisplayFunction->(TooltipBox[
+    StyleBox[
+     RowBox[{#, "\[InvisibleSpace]", 
+       StyleBox[
+        RowBox[{" ", "\"days\""}], "QuantityUnitTraditionalLabel"]}], 
+     ShowStringCharacters -> False], "Unit: days"]& ),
+  InterpretationFunction->(RowBox[{"Quantity", "[", 
+     RowBox[{#, ",", "\"Days\""}], "]"}]& )]], "Output",
+ CellChangeTimes->{3.621278445973282*^9}]
+}, Open  ]],
+
+Cell["\<\
+Now we calculate the number of mars dates which should be very close to a \
+integer.\
+\>", "Text",
+ CellChangeTimes->{{3.621278448016177*^9, 3.621278495090125*^9}}],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[{
+ RowBox[{"10845", "/", "m2e"}], "\[IndentingNewLine]", 
+ RowBox[{"mS0", "=", "10555"}]}], "Input",
+ CellChangeTimes->{{3.6212784536964684`*^9, 3.6212784561825037`*^9}, 
+   3.621278497355742*^9, {3.621278530169446*^9, 3.6212785307853193`*^9}, {
+   3.621279370226986*^9, 3.621279377729596*^9}}],
+
+Cell[BoxData["10554.83438802066`"], "Output",
+ CellChangeTimes->{
+  3.62127845878679*^9, {3.6212785312699957`*^9, 3.6212785390482473`*^9}, 
+   3.621279379342904*^9}],
+
+Cell[BoxData["10555"], "Output",
+ CellChangeTimes->{
+  3.62127845878679*^9, {3.6212785312699957`*^9, 3.6212785390482473`*^9}, 
+   3.6212793793453617`*^9}]
+}, Open  ]],
+
+Cell["\<\
+Calculate the how which calendar date on mars would correspond to so many \
+Mars Sol dates\
+\>", "Text",
+ CellChangeTimes->{{3.6212785443796062`*^9, 3.621278546042391*^9}, {
+  3.621278666813682*^9, 3.62127868762339*^9}, {3.621278723293913*^9, 
+  3.621278748862698*^9}}],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"yearDayList", "[", "numerOfYears_", "]"}], ":=", 
+  RowBox[{"Table", "[", 
+   RowBox[{
+    RowBox[{"668", "+", 
+     RowBox[{"leapPlus", "[", "i", "]"}]}], ",", 
+    RowBox[{"{", 
+     RowBox[{"i", ",", "1", ",", "numerOfYears"}], "}"}]}], "]"}]}]], "Input",\
+
+ CellChangeTimes->{{3.6212787653613462`*^9, 3.621278767228312*^9}, {
+  3.621278797942486*^9, 3.621278820020287*^9}, {3.6212788557293377`*^9, 
+  3.621278885869895*^9}, {3.621279030486473*^9, 3.621279063770851*^9}}],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[{
+ RowBox[{"totalList", "=", 
+  RowBox[{"Table", "[", 
+   RowBox[{
+    RowBox[{"Total", "@", 
+     RowBox[{"yearDayList", "[", "x", "]"}]}], ",", 
+    RowBox[{"{", 
+     RowBox[{"x", ",", "1", ",", "16"}], "}"}]}], 
+   "]"}]}], "\[IndentingNewLine]", 
+ RowBox[{"ListPlot", "[", "totalList", "]"}]}], "Input",
+ CellChangeTimes->{{3.6212790676679688`*^9, 3.621279181032522*^9}, {
+  3.6212792207015657`*^9, 3.621279242992689*^9}}],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{
+  "668", ",", "1336", ",", "2004", ",", "2672", ",", "3340", ",", "4008", ",",
+    "4676", ",", "5344", ",", "6012", ",", "6681", ",", "7349", ",", "8017", 
+   ",", "8685", ",", "9353", ",", "10021", ",", "10689"}], "}"}]], "Output",
+ CellChangeTimes->{
+  3.621279107681408*^9, {3.621279170078107*^9, 3.6212791817333393`*^9}, {
+   3.621279222371929*^9, 3.6212792434091053`*^9}}],
+
+Cell[BoxData[
+ GraphicsBox[{{}, 
+   {RGBColor[0.368417, 0.506779, 0.709798], PointSize[0.019444444444444445`], 
+    AbsoluteThickness[1.6], 
+    PointBox[{{1., 668.}, {2., 1336.}, {3., 2004.}, {4., 2672.}, {5., 
+     3340.}, {6., 4008.}, {7., 4676.}, {8., 5344.}, {9., 6012.}, {10., 
+     6681.}, {11., 7349.}, {12., 8017.}, {13., 8685.}, {14., 9353.}, {15., 
+     10021.}, {16., 10689.}}]}, {}},
+  AspectRatio->NCache[GoldenRatio^(-1), 0.6180339887498948],
+  Axes->{True, True},
+  AxesLabel->{None, None},
+  AxesOrigin->{0, 0},
+  DisplayFunction->Identity,
+  Frame->{{False, False}, {False, False}},
+  FrameLabel->{{None, None}, {None, None}},
+  FrameTicks->{{Automatic, Automatic}, {Automatic, Automatic}},
+  GridLines->{None, None},
+  GridLinesStyle->Directive[
+    GrayLevel[0.5, 0.4]],
+  ImageSize->{602.44140625, Automatic},
+  Method->{},
+  PlotRange->{{0., 16.}, {0, 10689.}},
+  PlotRangeClipping->True,
+  PlotRangePadding->{{
+     Scaled[0.02], 
+     Scaled[0.02]}, {
+     Scaled[0.02], 
+     Scaled[0.05]}},
+  Ticks->{Automatic, Automatic}]], "Output",
+ CellChangeTimes->{
+  3.621279107681408*^9, {3.621279170078107*^9, 3.6212791817333393`*^9}, {
+   3.621279222371929*^9, 3.6212792434671783`*^9}}]
+}, Open  ]],
+
+Cell[BoxData[""], "Input",
+ CellChangeTimes->{{3.6212788648782997`*^9, 3.6212788736024723`*^9}}],
+
+Cell["\<\
+So we would have 15 years with extra 534 days. Now we are able to find the \
+calendar date in Darian calendar of Mars.\
+\>", "Text",
+ CellChangeTimes->{{3.621279264027668*^9, 3.62127927384196*^9}, {
+  3.621279403959072*^9, 3.621279424308728*^9}}],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"10555", "-", "10021"}]], "Input",
+ CellChangeTimes->{{3.621279347912348*^9, 3.621279361850423*^9}, {
+  3.6212793958738813`*^9, 3.6212793997520943`*^9}}],
+
+Cell[BoxData["534"], "Output",
+ CellChangeTimes->{3.621279400420232*^9}]
+}, Open  ]]
 }, Open  ]]
 }, Open  ]]
 },
 WindowSize->{1280, 756},
-WindowMargins->{{0, Automatic}, {Automatic, 0}},
+WindowMargins->{{12, Automatic}, {Automatic, 0}},
 FrontEndVersion->"10.0 for Mac OS X x86 (32-bit, 64-bit Kernel) (June 27, \
 2014)",
 StyleDefinitions->"Default.nb"
@@ -131,20 +443,66 @@ Cell[859, 31, 159, 2, 28, "Item"]
 }, Open  ]],
 Cell[CellGroupData[{
 Cell[1055, 38, 89, 1, 64, "Section"],
-Cell[1147, 41, 191, 3, 28, "Input"]
+Cell[1147, 41, 191, 3, 28, "Input"],
+Cell[1341, 46, 145, 3, 28, "Input"]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[1375, 49, 98, 1, 64, "Section"],
-Cell[1476, 52, 158, 3, 30, "Text"]
+Cell[1523, 54, 98, 1, 64, "Section"],
+Cell[1624, 57, 158, 3, 30, "Text"]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[1671, 60, 96, 1, 64, "Section"],
-Cell[1770, 63, 490, 12, 30, "Text"],
-Cell[2263, 77, 326, 6, 30, "Text"],
-Cell[2592, 85, 237, 5, 30, "Text"],
+Cell[1819, 65, 96, 1, 64, "Section"],
+Cell[1918, 68, 490, 12, 30, "Text"],
+Cell[2411, 82, 326, 6, 30, "Text"],
 Cell[CellGroupData[{
-Cell[2854, 94, 249, 5, 28, "Input"],
-Cell[3106, 101, 165, 4, 28, "Output"]
+Cell[2762, 92, 121, 1, 44, "Subsection"],
+Cell[2886, 95, 361, 6, 30, "Text"],
+Cell[3250, 103, 579, 12, 28, "Input"],
+Cell[3832, 117, 131, 1, 30, "Text"],
+Cell[CellGroupData[{
+Cell[3988, 122, 218, 5, 28, InheritFromParent],
+Cell[4209, 129, 118, 2, 28, "Output"]
+}, Open  ]],
+Cell[4342, 134, 140, 1, 30, "Text"],
+Cell[4485, 137, 216, 5, 28, "Input"],
+Cell[4704, 144, 134, 1, 30, "Text"],
+Cell[4841, 147, 264, 6, 28, "Input"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[5142, 158, 119, 1, 44, "Subsection"],
+Cell[5264, 161, 261, 5, 30, "Text"],
+Cell[5528, 168, 599, 21, 315, "Text"],
+Cell[6130, 191, 250, 5, 30, "Text"],
+Cell[6383, 198, 1578, 42, 63, "Input"],
+Cell[7964, 242, 97, 1, 30, "Text"],
+Cell[CellGroupData[{
+Cell[8086, 247, 227, 4, 28, "Input"],
+Cell[8316, 253, 170, 3, 28, "Output"]
+}, Open  ]],
+Cell[8501, 259, 250, 5, 49, "Text"],
+Cell[CellGroupData[{
+Cell[8776, 268, 281, 7, 28, "Input"],
+Cell[9060, 277, 434, 11, 28, "Output"]
+}, Open  ]],
+Cell[9509, 291, 174, 4, 30, "Text"],
+Cell[CellGroupData[{
+Cell[9708, 299, 307, 5, 46, "Input"],
+Cell[10018, 306, 165, 3, 28, "Output"],
+Cell[10186, 311, 154, 3, 28, "Output"]
+}, Open  ]],
+Cell[10355, 317, 279, 6, 30, "Text"],
+Cell[10637, 325, 509, 12, 28, "Input"],
+Cell[CellGroupData[{
+Cell[11171, 341, 440, 11, 46, "Input"],
+Cell[11614, 354, 418, 8, 28, "Output"],
+Cell[12035, 364, 1206, 31, 384, "Output"]
+}, Open  ]],
+Cell[13256, 398, 96, 1, 28, "Input"],
+Cell[13355, 401, 256, 5, 30, "Text"],
+Cell[CellGroupData[{
+Cell[13636, 410, 176, 3, 28, "Input"],
+Cell[13815, 415, 72, 1, 28, "Output"]
+}, Open  ]]
 }, Open  ]]
 }, Open  ]]
 }
