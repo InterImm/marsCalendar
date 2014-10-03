@@ -10,10 +10,10 @@
 NotebookFileLineBreakTest
 NotebookFileLineBreakTest
 NotebookDataPosition[       158,          7]
-NotebookDataLength[     16266,        503]
-NotebookOptionsPosition[     13927,        421]
-NotebookOutlinePosition[     14281,        437]
-CellTagsIndexPosition[     14238,        434]
+NotebookDataLength[     18920,        579]
+NotebookOptionsPosition[     16101,        481]
+NotebookOutlinePosition[     16454,        497]
+CellTagsIndexPosition[     16411,        494]
 WindowFrame->Normal*)
 
 (* Beginning of Notebook Content *)
@@ -129,7 +129,8 @@ Cell[BoxData[
 
 Cell[BoxData[
  RowBox[{"-", "345596"}]], "Output",
- CellChangeTimes->{{3.6212762763764677`*^9, 3.621276284394977*^9}}]
+ CellChangeTimes->{{3.6212762763764677`*^9, 3.621276284394977*^9}, 
+   3.621304570776999*^9}]
 }, Open  ]],
 
 Cell["Number of dates on the earth away from the coordinate date", "Text",
@@ -254,7 +255,7 @@ Cell[BoxData[
 Cell[BoxData["0"], "Output",
  CellChangeTimes->{
   3.6212778682388477`*^9, {3.621277960721159*^9, 3.62127796899235*^9}, {
-   3.621278018097365*^9, 3.621278062008757*^9}}]
+   3.621278018097365*^9, 3.621278062008757*^9}, 3.621304570844612*^9}]
 }, Open  ]],
 
 Cell["\<\
@@ -286,7 +287,7 @@ Cell[BoxData[
      ShowStringCharacters -> False], "Unit: days"]& ),
   InterpretationFunction->(RowBox[{"Quantity", "[", 
      RowBox[{#, ",", "\"Days\""}], "]"}]& )]], "Output",
- CellChangeTimes->{3.621278445973282*^9}]
+ CellChangeTimes->{3.621278445973282*^9, 3.621304571806271*^9}]
 }, Open  ]],
 
 Cell["\<\
@@ -307,12 +308,12 @@ Cell[BoxData[{
 Cell[BoxData["10554.83438802066`"], "Output",
  CellChangeTimes->{
   3.62127845878679*^9, {3.6212785312699957`*^9, 3.6212785390482473`*^9}, 
-   3.621279379342904*^9}],
+   3.621279379342904*^9, 3.621304571975218*^9}],
 
 Cell[BoxData["10555"], "Output",
  CellChangeTimes->{
   3.62127845878679*^9, {3.6212785312699957`*^9, 3.6212785390482473`*^9}, 
-   3.6212793793453617`*^9}]
+   3.621279379342904*^9, 3.62130457197845*^9}]
 }, Open  ]],
 
 Cell["\<\
@@ -360,7 +361,7 @@ Cell[BoxData[
    ",", "8685", ",", "9353", ",", "10021", ",", "10689"}], "}"}]], "Output",
  CellChangeTimes->{
   3.621279107681408*^9, {3.621279170078107*^9, 3.6212791817333393`*^9}, {
-   3.621279222371929*^9, 3.6212792434091053`*^9}}],
+   3.621279222371929*^9, 3.6212792434091053`*^9}, 3.621304572024085*^9}],
 
 Cell[BoxData[
  GraphicsBox[{{}, 
@@ -393,7 +394,7 @@ Cell[BoxData[
   Ticks->{Automatic, Automatic}]], "Output",
  CellChangeTimes->{
   3.621279107681408*^9, {3.621279170078107*^9, 3.6212791817333393`*^9}, {
-   3.621279222371929*^9, 3.6212792434671783`*^9}}]
+   3.621279222371929*^9, 3.6212792434091053`*^9}, 3.621304572234024*^9}]
 }, Open  ]],
 
 Cell[BoxData[""], "Input",
@@ -401,26 +402,85 @@ Cell[BoxData[""], "Input",
 
 Cell["\<\
 So we would have 15 years with extra 534 days. Now we are able to find the \
-calendar date in Darian calendar of Mars.\
+calendar date in Darian calendar of Mars. And we can determine that the  16th \
+year is a common year.\
 \>", "Text",
  CellChangeTimes->{{3.621279264027668*^9, 3.62127927384196*^9}, {
-  3.621279403959072*^9, 3.621279424308728*^9}}],
+  3.621279403959072*^9, 3.621279424308728*^9}, {3.621304538997299*^9, 
+  3.6213045524336157`*^9}, {3.621304583727862*^9, 3.621304586744996*^9}}],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[{
+ RowBox[{"10555", "-", "10021"}], "\[IndentingNewLine]", 
+ RowBox[{"leapPlus", "[", "16", "]"}]}], "Input",
+ CellChangeTimes->{{3.621279347912348*^9, 3.621279361850423*^9}, {
+  3.6212793958738813`*^9, 3.6212793997520943`*^9}, {3.621304598602049*^9, 
+  3.6213046010833673`*^9}}],
+
+Cell[BoxData["534"], "Output",
+ CellChangeTimes->{
+  3.621279400420232*^9, {3.621304572308682*^9, 3.621304601983889*^9}}],
+
+Cell[BoxData["0"], "Output",
+ CellChangeTimes->{
+  3.621279400420232*^9, {3.621304572308682*^9, 3.621304601985754*^9}}]
+}, Open  ]],
+
+Cell["The Darian date of 2000-01-06 is the 19+1th month", "Text",
+ CellChangeTimes->{{3.6213046057067823`*^9, 3.6213046273844843`*^9}, {
+  3.621304740824844*^9, 3.621304744607068*^9}, {3.62130483806286*^9, 
+  3.6213048382295723`*^9}}],
 
 Cell[CellGroupData[{
 
 Cell[BoxData[
- RowBox[{"10555", "-", "10021"}]], "Input",
- CellChangeTimes->{{3.621279347912348*^9, 3.621279361850423*^9}, {
-  3.6212793958738813`*^9, 3.6212793997520943`*^9}}],
+ RowBox[{"Floor", "[", 
+  RowBox[{"534", "/", "28"}], "]"}]], "Input",
+ CellChangeTimes->{{3.621304670546776*^9, 3.621304757162594*^9}}],
 
-Cell[BoxData["534"], "Output",
- CellChangeTimes->{3.621279400420232*^9}]
-}, Open  ]]
+Cell[BoxData["19"], "Output",
+ CellChangeTimes->{{3.621304734398288*^9, 3.621304758207347*^9}}]
+}, Open  ]],
+
+Cell["with the date", "Text",
+ CellChangeTimes->{{3.621304760817967*^9, 3.6213047628174467`*^9}}],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"534", "-", 
+  RowBox[{"3", "*", 
+   RowBox[{"(", 
+    RowBox[{
+     RowBox[{"5", "*", "28"}], "+", "27"}], ")"}]}], "-", "28"}]], "Input",
+ CellChangeTimes->{{3.621304776520638*^9, 3.621304844677698*^9}}],
+
+Cell[BoxData["5"], "Output",
+ CellChangeTimes->{3.621304814005637*^9, 3.621304846042206*^9}]
+}, Open  ]],
+
+Cell["\<\
+So we obtain the calendar date of 200-01-06 on Mars is Martian year 15, month \
+19, day 5, or 0015-19-05.\
+\>", "Text",
+ CellChangeTimes->{{3.621304848597959*^9, 3.621304871853722*^9}, {
+  3.621304907355427*^9, 3.621304933239029*^9}, {3.621304964719557*^9, 
+  3.6213049718125753`*^9}}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["Conversion Between the 2 calendar", "Subsection",
+ CellChangeTimes->{{3.6213050024528513`*^9, 3.621305017689961*^9}}],
+
+Cell["Given a Earth calendar date, we first obtain the ", "Text",
+ CellChangeTimes->{{3.621305024970191*^9, 3.621305043280273*^9}}]
 }, Open  ]]
 }, Open  ]]
 },
-WindowSize->{1280, 756},
-WindowMargins->{{12, Automatic}, {Automatic, 0}},
+WindowSize->{1276, 756},
+WindowMargins->{{0, Automatic}, {Automatic, 0}},
 FrontEndVersion->"10.0 for Mac OS X x86 (32-bit, 64-bit Kernel) (June 27, \
 2014)",
 StyleDefinitions->"Default.nb"
@@ -460,49 +520,65 @@ Cell[2886, 95, 361, 6, 30, "Text"],
 Cell[3250, 103, 579, 12, 28, "Input"],
 Cell[3832, 117, 131, 1, 30, "Text"],
 Cell[CellGroupData[{
-Cell[3988, 122, 218, 5, 28, InheritFromParent],
-Cell[4209, 129, 118, 2, 28, "Output"]
+Cell[3988, 122, 218, 5, 28, "Input"],
+Cell[4209, 129, 144, 3, 28, "Output"]
 }, Open  ]],
-Cell[4342, 134, 140, 1, 30, "Text"],
-Cell[4485, 137, 216, 5, 28, "Input"],
-Cell[4704, 144, 134, 1, 30, "Text"],
-Cell[4841, 147, 264, 6, 28, "Input"]
+Cell[4368, 135, 140, 1, 30, "Text"],
+Cell[4511, 138, 216, 5, 28, "Input"],
+Cell[4730, 145, 134, 1, 30, "Text"],
+Cell[4867, 148, 264, 6, 28, "Input"]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[5142, 158, 119, 1, 44, "Subsection"],
-Cell[5264, 161, 261, 5, 30, "Text"],
-Cell[5528, 168, 599, 21, 315, "Text"],
-Cell[6130, 191, 250, 5, 30, "Text"],
-Cell[6383, 198, 1578, 42, 63, "Input"],
-Cell[7964, 242, 97, 1, 30, "Text"],
+Cell[5168, 159, 119, 1, 44, "Subsection"],
+Cell[5290, 162, 261, 5, 30, "Text"],
+Cell[5554, 169, 599, 21, 315, "Text"],
+Cell[6156, 192, 250, 5, 30, "Text"],
+Cell[6409, 199, 1578, 42, 63, "Input"],
+Cell[7990, 243, 97, 1, 30, "Text"],
 Cell[CellGroupData[{
-Cell[8086, 247, 227, 4, 28, "Input"],
-Cell[8316, 253, 170, 3, 28, "Output"]
+Cell[8112, 248, 227, 4, 28, "Input"],
+Cell[8342, 254, 192, 3, 28, "Output"]
 }, Open  ]],
-Cell[8501, 259, 250, 5, 49, "Text"],
+Cell[8549, 260, 250, 5, 49, "Text"],
 Cell[CellGroupData[{
-Cell[8776, 268, 281, 7, 28, "Input"],
-Cell[9060, 277, 434, 11, 28, "Output"]
+Cell[8824, 269, 281, 7, 28, "Input"],
+Cell[9108, 278, 456, 11, 28, "Output"]
 }, Open  ]],
-Cell[9509, 291, 174, 4, 30, "Text"],
+Cell[9579, 292, 174, 4, 30, "Text"],
 Cell[CellGroupData[{
-Cell[9708, 299, 307, 5, 46, "Input"],
-Cell[10018, 306, 165, 3, 28, "Output"],
-Cell[10186, 311, 154, 3, 28, "Output"]
+Cell[9778, 300, 307, 5, 46, "Input"],
+Cell[10088, 307, 187, 3, 28, "Output"],
+Cell[10278, 312, 173, 3, 28, "Output"]
 }, Open  ]],
-Cell[10355, 317, 279, 6, 30, "Text"],
-Cell[10637, 325, 509, 12, 28, "Input"],
+Cell[10466, 318, 279, 6, 30, "Text"],
+Cell[10748, 326, 509, 12, 28, "Input"],
 Cell[CellGroupData[{
-Cell[11171, 341, 440, 11, 46, "Input"],
-Cell[11614, 354, 418, 8, 28, "Output"],
-Cell[12035, 364, 1206, 31, 384, "Output"]
+Cell[11282, 342, 440, 11, 46, "Input"],
+Cell[11725, 355, 440, 8, 28, "Output"],
+Cell[12168, 365, 1228, 31, 384, "Output"]
 }, Open  ]],
-Cell[13256, 398, 96, 1, 28, "Input"],
-Cell[13355, 401, 256, 5, 30, "Text"],
+Cell[13411, 399, 96, 1, 28, "Input"],
+Cell[13510, 402, 414, 7, 30, "Text"],
 Cell[CellGroupData[{
-Cell[13636, 410, 176, 3, 28, "Input"],
-Cell[13815, 415, 72, 1, 28, "Output"]
-}, Open  ]]
+Cell[13949, 413, 292, 5, 46, "Input"],
+Cell[14244, 420, 121, 2, 28, "Output"],
+Cell[14368, 424, 119, 2, 28, "Output"]
+}, Open  ]],
+Cell[14502, 429, 234, 3, 30, "Text"],
+Cell[CellGroupData[{
+Cell[14761, 436, 150, 3, 28, "Input"],
+Cell[14914, 441, 95, 1, 28, "Output"]
+}, Open  ]],
+Cell[15024, 445, 97, 1, 30, "Text"],
+Cell[CellGroupData[{
+Cell[15146, 450, 228, 6, 28, "Input"],
+Cell[15377, 458, 92, 1, 28, "Output"]
+}, Open  ]],
+Cell[15484, 462, 295, 6, 30, "Text"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[15816, 473, 123, 1, 44, "Subsection"],
+Cell[15942, 476, 131, 1, 30, "Text"]
 }, Open  ]]
 }, Open  ]]
 }
