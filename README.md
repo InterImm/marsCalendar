@@ -22,3 +22,8 @@ marsCalendar
 
 1. 在 2012-07-01 添加了闰年时间 35+32.84 s，因此计算这个日期之后的日期需要修正
 2. There is a slight adjustment as the midnights weren't perfectly aligned. Allison, M., and M. McEwen 2000 has &minus;0.00072 but the Mars24 site gives a more up-to-date &minus;0.00096. -- http://jtauber.github.io/mars-clock/
+
+
+## iPython Notebook
+
+链接：[nbviewer 的在线链接](http://nbviewer.ipython.org/github/InterImm/marsCalendar/blob/master/py/calendar.ipynb)
